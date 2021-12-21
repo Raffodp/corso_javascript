@@ -1,2 +1,2 @@
 # corso_javascript
-corso javascript prof. Dino Olivieri
+Corso javascript prof. Dino Olivieri
