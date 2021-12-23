@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Lezione 02 let, const, operatori e aritmetica</title>
+	</head>
+	<body>
+		<h1 id="titolo_principale">Lezione 02 let, const, operatori e aritmetica</h1>
+		<p>Se usi chrome apri la finestra developer tools (..., altri strumenti, strumenti per sviluppatori).</p>
+		<p>Per vedere cosa fa il javascript di esempio mostrare il tab console.</p>
+
+		<script>
+
+			"use strict";
+
+			function myprint(s){
+				console.log(s);
+				document.getElementById('output_codice').innerHTML += s;
+			}
+
+
+			window.addEventListener(
+				'DOMContentLoaded', 
+				function(event){
+					myprint('DOM fully loaded and parsed');
+
+					myprint("Lezione 02 let, const, operatori e aritmetica");
+				}
+			);
+
+		</script>
+
+		<h2 id=titolo_2">Output del programma</h2>
+		<div id="output_codice"></div>
+	</body>
+</html>
