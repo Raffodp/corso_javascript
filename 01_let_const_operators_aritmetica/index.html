@@ -53,6 +53,27 @@
 
 					v=15;
 					myprint("(v=15) ++v="+(++v)); // incremento dopo stamparlo
+
+					// operatori logici booleani
+					// logica predicativa:
+					// NOT (negazione VERO > FALSO e viceversa)
+					// AND (TUTTE VERE => VERO)
+					// OR (ALMENO UNA VERA => VERO)
+					
+					let l1 = 5, l2 = 10;
+					myprint("l1 < l2 : " + ( l1<l2 ));
+					myprint("l1 < l2 : " + !( l1<l2 ));
+					myprint("l1 < l2 && l1 >100) : " + ( l1<l2 && l1 >100 ));
+					myprint("l1 < l2 && l1 <100) : " + ( l1<l2 && l1 <100 ));
+					myprint("l1 < l2 || l1 >100) : " + ( l1<l2 || l1 >100 ));
+					//operatori bitwise
+					let b1=12, b2=15;
+					myprint("b1 = "+b1);
+					myprint("b2 = "+b2);
+					myprint("~b1 = "+ ~b1)
+					myprint("b1|b2= "+ (b1|b2));
+					myprint("b1&b2= "+ (b1&b2));
+
 				}
 			);
 
