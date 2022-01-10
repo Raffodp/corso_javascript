@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<title>lezione 03 datatypes, functions e objects</title>
+	</head>
+	<body>
+		<h1 id="titolo_principale">lezione 03 datatypes, functions e objects</h1>
+		<p>Se usi chrome apri la finestra developer tools (..., altri strumenti, strumenti per sviluppatori).</p>
+		<p>Per vedere i console.log inseriti in javascript di esempio (mostrare il tab console).</p>
+
+		<script>
+
+			"use strict";
+
+			// datatypes
+			// https://www.w3schools.com/js/js_datatypes.asp
+			
+			function numAscComp (n1, n2){
+				return n1-n2;
+			}
+
+			window.addEventListener(
+				'DOMContentLoaded', 
+				function(event){
+
+					// se invece di una variabile singola voglio un elenco di variabili ordinate in una lista
+					let cosa_da_comprare = "pane";
+
+					// la precedentre è una cosa sola, ma se voglio un elenco ordinato posso usare gli array
+					// un array di N elementi si conta da 0 .. N-1
+					const cose_da_comprare = ["pane", "latte", "uova"];
+
+					document.getElementById("output_codice").innerHTML += cose_da_comprare[0] + '<br>';
+
+					let animali = [];
+					animali.push("cane");		// push aggiunge alla fine
+					animali.push("gatto");
+					animali.unshift("canarino"); //aggiunge all'inizio
+					animali.unshift("zebra");
+					animali.splice(2, 0, "cinghiale", "elefante"); //può inserire e cancellare elementi
+					animali[4] = "coniglio"; // come sostituire un valore dell'array
+
+
+					document.getElementById("output_codice").innerHTML += animali.length + '<br>';
+					document.getElementById("output_codice").innerHTML += animali + '<br>';
+					document.getElementById("output_codice").innerHTML += animali.reverse() + '<br>';
+					document.getElementById("output_codice").innerHTML += animali.sort() + '<br>';
+
+					let ultimoElemento = animali.pop(); // toglie ultimo elemento e lo torna
+					document.getElementById("output_codice").innerHTML += animali + '<br>';
+					let primoElemento = animali.shift(); // toglie primo elemento e lo torna
+					document.getElementById("output_codice").innerHTML += animali + '<br>';
+					let terzoElemento = animali.splice(2,1); // toglie indice 2 (quindi terzo elemento) e lo torna
+					document.getElementById("output_codice").innerHTML += animali + '<br>';
+
+					// cosa succede se chiedo o cerco di utilizzare un indice che non c'è
+
+					document.getElementById("output_codice").innerHTML += animali[10] + '<br>'; //undefined
+					// cosa succede se chiedo o cerco di scrivere un indice che non c'è
+
+					animali[10] = "granchio";
+					document.getElementById("output_codice").innerHTML += animali + '<br>' //crea tutte gli elementi che mancavano
+					document.getElementById("output_codice").innerHTML += animali.length + '<br>';
+
+					let numeri = [1 , 32, 4, 18, 123];
+					document.getElementById("output_codice").innerHTML += numeri + '<br>';
+					document.getElementById("output_codice").innerHTML += numeri.sort() + '<br>';
+					document.getElementById("output_codice").innerHTML += numeri.sort(numAscComp) + '<br>';
+
+					// unire un array in stringa separata
+					document.getElementById("output_codice").innerHTML += numeri.join('(ciao') + '<br>';
+
+					// ricavare array da una stringa separata
+					let giochi = ("monopoli - risiko - cluedo").split("-");
+					document.getElementById("output_codice").innerHTML += giochi + '<br>';
+
+
+
+
+
+
+				}
+			);
+
+
+		</script>
+
+		<h2 id="titolo_2">Output del programma</h2>
+		<div id="output_codice"></div>
+	</body>
+</html>
