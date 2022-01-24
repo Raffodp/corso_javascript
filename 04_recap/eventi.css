@@ -1,0 +1,26 @@
+.miobox {
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+.miobottone{
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.altrobox{
+background-color: orange;
+border: 5px solid rebeccapurple;
+font-size: 3rem;
+font-family: Arial, Helvetica, sans-serif;
+}
+.red{
+background-color: red;
+}
+.green{
+background-color: green;
+}
+
+.blue{
+    background-color: blue;
+}

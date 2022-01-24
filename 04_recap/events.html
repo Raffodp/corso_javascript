@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>sort su array</title>
+	</head>
+	<body>
+		<h1 id="titolo_principale">lezione 05 recap prima di esercitazioni</h1>
+		<p>Se usi chrome apri la finestra developer tools (..., altri strumenti, strumenti per sviluppatori).</p>
+		<p>Per vedere i console.log inseriti in javascript di esempio (mostrare il tab console).</p>
+
+		<script>
+
+			"use strict";
+
+			function ordinaNumeriAsc (a, b){
+
+				return a-b;
+			}
+
+			function ordinaNumeriDsc (a, b){
+
+                return b-a;
+            }
+
+			window.addEventListener(
+				'DOMContentLoaded', 
+				function(event){
+
+			//	let cose_da_fare = ["fare colazione", "mettere la sveglia","lavarsi","andare a fare la spesa"];
+			    let cose_da_fare = [10, 35, 8, 11, 24, "23"];
+				for(let i=0; i < cose_da_fare.length; i++){
+				
+					console.log(cose_da_fare[i])
+			
+			};
+
+			cose_da_fare.sort(ordinaNumeriDsc);
+
+
+
+			cose_da_fare.forEach(function(value, index, a){
+
+				console.log(value);
+				console.log(a[index])
+			});
+				}
+				
+			);
+
+		</script>
+
+		<h2 id="titolo_2">Output del programma</h2>
+		<div id="output_codice"></div>
+	
+	</body>
+
+</html>
