@@ -24,3 +24,18 @@ background-color: green;
 .blue{
     background-color: blue;
 }
+
+.container {
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid black;
+    overflow: hidden;            /* clip the excess when child gets bigger than parent */
+  }
+.container img {
+    display: block;
+    transition: transform .4s;   /* smoother zoom */
+  }
+  .container:hover img {
+    transform: scale(1.3);
+    transform-origin: 50% 50%;
+  }
