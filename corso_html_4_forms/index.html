@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form di iscrizione</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Formi di iscrizione alla community</h1>
+
+    <!--
+DATI DA RICHIEDERE:
+
+nome | cognome
+data di nascita
+Genere (radio)
+Via e civico | città | provincia
+Telefono | email
+------------------
+Che strumento suoni? (select)-->
+
+
+    <form action="#" method="GET">
+    <div>
+        <label for="nome_ID">Nome</label><br> 
+        <input type="text" name="nome" id ="nome_ID" >
+    </div>    
+        <label for="cognome_ID">Cognome</label><br>
+        <input type="text" name="cognome" id ="cognome_ID" >
+       <div>
+        <label for="data_nascita_ID">Data di nascita</label><br>    
+        <input type="date" name="data_nascita" id ="data_nascita_ID" >
+    </div>
+      
+    <div>
+            <label for="genere">Genere</label><br>
+            <input type="radio" name="genere" value="m" id ="m_ID" >
+            <label for="m_id">M</label>
+            <input type="radio" name="genere" value="f" id ="f_ID" >
+            <label for="f_id">F</label>
+            <input type="radio" name="genere" value="altro" id="altro_ID">
+            <label for="altro_ID">Altro</label>
+    </div>        
+            <label for="indirizzo_ID">Indirizzo (via e civico)</label>
+            <input type="text" name="indirizzo" id="indirizzo_ID">
+
+        
+            <label for="citta_ID">Città</label>
+            <input type="text" name="citta" id ="citta_ID" >
+        
+            <label for="provincia_ID">Provincia</label>
+            <select name="provincia" id="provincia_ID" required>
+            <option value="" disabled selected>Select your option</option>
+            <option name = "Agrigento" value="ag">Agrigento</option>
+            <option  name = "Alessandria" value="al">Alessandria</option>
+            </select> 
+
+    <div>
+            <label for="telefono_ID">Telefono</label>    
+            <input type="tel" name="telefono" id="telefono_ID" pattern="[0-9]{3}-[0-9]{7}" placeholder="formato: 000-0000000"required>
+    </div>
+        <label for="Email_ID">Email</label>
+        <input type="email"name="email" id="email_ID">
+
+        <div>
+            <input type="checkbox" name="strumento" id="pianoforte" value="pianoforte">
+            <label for="pianoforte">Pianoforte</label>
+            <input type="checkbox" name="strumento" id="chitarra" value="chitarra">
+            <label for="chitarra">Chitarra</label>
+            <input type="checkbox" name="strumento" id="batteria" value="batteria">
+            <label for="batteria">Batteria</label>
+            <input type="checkbox" name="strumento" id="basso" value="basso">
+            <label for="basso">Basso</label>
+        </div>
+            <div>
+            <input type="checkbox" name="privacy" id="privacy_ID" value="1">
+            <label for="privacy_ID">Accetto la privacy policy</label>
+            </div>
+        <div>
+            <textarea name="note" id="note_ID" cols="30" rows="5" ></textarea></div>
+      
+            <button type="submit" id="submitForm">Invia</button>
+            <button type="reset" id="resetForm">Resetta</button>
+    </form> 
+   
+    <hr>
+  
+    <h1>altri campi</h1>
+    <form action="#">
+        <div><input type="color" id="color_ID" name="color"></div>
+       
+        <div><input type="number" id="number_ID" name="number" min="0" max="1000000" step="1000"></div>
+   
+        <div><input type="file" id="file_ID" name="file"></div>
+
+        <div><input type="range" id="range_ID" name="range" min="10" max="1000" step="20"></div>
+        <button type="submit">Invia</button>
+    </form>
+</body>
+</html>

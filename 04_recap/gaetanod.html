@@ -1,0 +1,177 @@
+<html>
+	<head>
+		<title>validazioni form</title>
+	</head>
+	<body>
+		<h1 id="titolo_principale">validazioni form</h1>
+		<p>Se usi chrome apri la finestra developer tools (..., altri strumenti, strumenti per sviluppatori).</p>
+		<p>Per vedere i console.log inseriti in javascript di esempio (mostrare il tab console).</p>
+
+        <form id="form" action="#" method="GET">
+            <label for="nomeId">Nome</label>
+            <input type="text" name="nome" id ="nomeId" placeholder="Mario"><br>
+            <label for="cognomeId">Cognome</label>
+            <input type="text" name="cognome" id ="cognomeId" placeholder="Rossi"><br>
+            <label for="dataNascitaId">Data di Nascita</label>
+            <input type="date" name="dataNascita" id ="dataNascitaId" placeholder="01/01/99"><br>
+            <label for="telefonoId">Telefono</label>
+            <input type="tel" name="telefono" id ="telefonoId" pattern="[0-9]{10}" placeholder="3349088222"><br>
+            <label for="emailId">Email</label>
+            <input type="email" name="email" id ="emailId" placeholder="m.rossi@gmail.com"><br>
+            <label for="indirizzoId">Indirizzo</label>
+            <input type="text" name="indirizzo" id ="indirizzoId" placeholder="Via rossi, 13"><br>
+            <label for="pesoId">Peso</label>
+            <input type="range" name="peso" id="pesoId" value="40" min="40" max="300" placeholder="90 KG"><br>
+            <label for="altezzaId">Altezza</label>
+            <input type="range" name="altezza" id="altezzaId" value="150" min="150" max="220" placeholder="150 cm"><br>
+            <label for="favcolor">Colore</label>
+            <input type="color" id="coloreId" name="colore"><br>
+            <button type="submit" id="submitForm">Invia</button>
+        </form>
+        
+
+		<script>
+
+			"use strict";
+
+			// Questo è il commento di una linea.
+
+			/* Esercizio:
+			1. TODO Creare un form che abbia questi elementi: nome, cognome, data di nascita, telefono, email, indirizzo, peso, colore preferito, altezza
+            2. TODO Utilizzare gli input giusti per la tipologia di dato indicato
+            3. TODO Intercettare il submit
+            4. TODO Annullare l'invio se i campi non sono riempiti o validi
+            5. TODO Inviare il modulo ad una certa url
+			EVOLUTIVA 
+			1.TODO
+			*/
+
+            function logSubmit(event) {
+                 /*
+				let input = document.getElementById("fake_param").value;
+				if(input!=1)  {
+					// Il form non è valido msg di errore --> stop
+					alert("Error: Devi inserire 1");
+				}else {
+					// Il form è valido (perchè è 1)
+
+					// TODO richiedere i dati della action del form in GET con appesi i parametri dentro il form
+					
+				} 
+                */
+				event.preventDefault();
+                // Verifico i vari valori, se non vanno bene avverto ed esco
+                let inNome = document.getElementById("nomeId").value;
+                if(inNome.length == 0){
+                    alert("Il nome non può essere vuoto");
+                    return;
+                }
+                let inCognome = document.getElementById("cognomeId").value;
+                if(inCognome.length == 0){
+                    alert("Il cognome non può essere vuoto");
+                    return;
+                }
+                let inData = document.getElementById("dataNascitaId").value;
+                if(inData.length == 0){
+                    alert("La data non può essere vuota");
+                    return;
+                }
+                let inTel = document.getElementById("telefonoId").value;
+                if(inTel.length == 0){
+                    alert("Il telefono non può essere vuoto");
+                    return;
+                }
+
+                let inEmail = document.getElementById("emailId").value;
+                if(inEmail.length == 0){
+                    alert("L'email non può essere vuota");
+                    return;
+                }
+
+                let inIndirizzo = document.getElementById("indirizzoId").value;
+                if(inIndirizzo.length == 0){
+                    alert("L'indirizzo non può essere vuoto");
+                    return;
+                }
+
+                let inPeso = document.getElementById("pesoId").value;
+                if(pesoId.length == 0){
+                    alert("Il peso non può essere vuoto");
+                    return;
+                }
+
+                let inAltezza = document.getElementById("altezzaId").value;
+                if(inAltezza.length == 0){
+                    alert("L'altezza non può essere vuota");
+                    return;
+                }
+
+                let inColore = document.getElementById("coloreId").value;
+                if(inColore.length == 0){
+                    alert("Il colore non può essere vuoto");
+                    return;
+                }
+                // Se i contolli sono corretti compongo la fetch ed eseguo
+                let url="https://postman-echo.com/get?";
+                url+= "nome="+ encodeURIComponent(inNome);
+                url+= "&cognome="+ encodeURIComponent(inCognome);
+                url+= "&dataNascita="+ encodeURIComponent(inData);
+                url+= "&telefono="+ encodeURIComponent(inTel);
+                url+= "&email="+ encodeURIComponent(inEmail);
+                url+= "&indirizzo="+ encodeURIComponent(inIndirizzo);
+                url+= "&peso="+ encodeURIComponent(inPeso);
+                url+= "&altezza="+ encodeURIComponent(inAltezza);
+                url+= "&colore="+ encodeURIComponent(inColore);
+
+                console.log(url);
+
+                fetch(url)
+				.then(function(response) {
+
+						// lo status http viene fornito
+						//alert("STATUS HTTP: "+response.status);
+						//console.log("STATUS HTTP: ",response.status);
+
+						if (!response.ok) {
+							// make the promise be rejected if we didn't get a 2xx response
+							const err = new Error("Not 2xx response");
+							err.response = response;
+							throw err;
+						} else {
+							// go the desired response
+							// When the page is loaded convert it to text
+							return response.json();
+						}
+				})
+				.then(function(json) {
+						console.log(json);
+						// posso iniettare html in pagina
+			 			document.getElementById("output_richiesta").innerHTML = html;
+					
+				})
+				.catch(function(err) { 
+						alert(err);
+						console.log('Failed to fetch page: ', err);
+						document.getElementById("output_richiesta").innerHTML = ''; 
+				});
+			}
+            
+
+
+			window.addEventListener(
+				'DOMContentLoaded', 
+				function(event){
+                    let form = document.getElementById('form');
+					form.addEventListener('submit', logSubmit);
+
+				}
+			);
+
+
+		</script>
+        <h2 id="titolo_2">Output della richiesta url</h2>
+	    <div id="output_richiesta"></div>
+
+	</body>
+
+</html>

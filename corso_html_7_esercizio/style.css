@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    color:#000000;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height:auto;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+.mainHeader {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+#hero {
+    padding:1rem;
+}
+
+.logo {
+    width:5rem;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 2.5rem;
+} 
+
+.consigliBox {
+    background-color: #f3f3f3;
+    padding:1rem;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    border-left:0.7rem solid #e1c900;
+}
+
+.boxTitle{
+    font-weight: bold;
+}
+
+#servizi {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.servizioBox {
+    display: flex;
+    align-items: center;
+}
+
+.imgSx {
+    padding: 15px 15px 15px 0px;
+    float: left;
+    width: 20%
+}
+
+.imgDx {
+    padding: 15px 0px 15px 15px;
+    float: right;
+    width: 20%
+    }
+
+#pBox {
+
+    text-align: right;
+}
+
+.socialIcon{
+    width:1.2rem;
+    height: auto;
+    margin: 0.4rem;
+}
+
+
+footer {
+    background-color: #1e3957;
+    padding: 5px;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;  
+}
+
+.left{
+    color:white
+}
+
+.right{
+    text-align: right;
+    color:white
+}
+
+.whiteBox{
+    height: 100px;
+}

@@ -1,0 +1,20 @@
+textarea {
+resize:none;
+
+}
+
+div{
+    margin-bottom: 1rem;
+}
+
+#submitForm{
+    background-color: chartreuse;
+    color: cornsilk;
+    border-radius: 5px ;
+}
+
+#resetForm{
+    background-color:tomato;
+    color: gold;
+    border-radius: 5px ;
+}
