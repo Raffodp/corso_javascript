@@ -1,0 +1,286 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background:rgb(246, 246, 246);
+    color:#322828;
+}
+
+img {
+    width:100%;
+    height:auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wMargin {
+    /*classe per impostare un margine dal bordo della finestra*/
+    width: 92%;
+    margin:0 auto;
+}
+
+.button {
+    background:#322828;
+    color:#efefef;
+    padding:0.5rem 1rem;
+    border-radius:6px;
+    text-decoration: none;
+
+    transition: all 0.25s ease-in-out;
+}
+
+.button:hover { /*seleziona gli elementi con .button ma SOLO al passaggio del mouse */
+
+    background:#a2632b;
+
+}
+
+#mainHeader {
+    display: flex;
+    align-items: center; /*allineamento in verticale*/
+    justify-content: space-between; /*disporre gli elementi agli estremi orizzontali*/
+
+    padding:1rem 0;
+
+   
+}
+
+
+
+.logo img {
+    width:5rem;
+    height: auto;
+}
+
+/* MENU */
+
+.mainNav ul { /*UL dentro #mainNav*/
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+
+}
+
+.mainNav li {
+    padding:0.25rem 1.5rem; /*il primo valore è sopra+sotto il secondo è sinistra+destra*/
+}
+
+#hero {
+    position:relative;
+}
+
+#hero::before {
+    content:'';
+    display: block;
+    width:100%;
+    height:100%;
+    position:absolute;
+
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0.3169861694677871) 0%, rgba(0,0,0,0.7231486344537815) 100%);
+
+}
+
+.cta {
+    position:absolute;
+    color:#efefef;
+
+    /*hack per centrare con position:absolute | NB: meglio usare flexbox! */
+
+    /*
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    height:10rem;
+    */
+
+    left:0;
+    top:0;
+   
+    width: 100%;
+    height: 100%;
+   
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  
+}
+
+#hero img {
+    width: 100%;
+    height: auto;
+
+   
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    NEWS                                    */
+/* -------------------------------------------------------------------------- */
+
+
+#news {
+    display: flex;
+    flex-wrap: wrap; /*serve per mandare a capo gli elementi quando finisce lo spazio nel container*/
+
+   padding:4rem 0;
+    
+}
+
+.newsBox {
+    width: 100%;
+}
+
+/*SERVIZI*/
+
+#servizi {
+    padding-top: 4rem; /*equivale allo shorthand sopra: padding:4rem 0 */
+    padding-bottom: 4rem;
+
+   
+}
+
+.serviziBox {
+    text-align: center;
+    margin-bottom: 3rem;
+} 
+
+.serviziIcon {
+    font-size: 8rem;
+}
+
+.serviziText {
+    font-size: 1.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  CITAZIONE                                 */
+/* -------------------------------------------------------------------------- */
+#citazione {
+    margin-bottom: 6rem;
+}
+blockquote {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+blockquote::before {
+    content: open-quote;
+    font-size: 4rem;
+    font-family: serif;
+
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   GALLERY                                  */
+/* -------------------------------------------------------------------------- */
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.galleryItem {
+    width:50%; 
+
+    position: relative;
+}
+
+.galleryItem img {
+    display: block; /*evita spazi bianchi in fondo al blocco dell'immagine*/
+}
+
+.caption {
+   
+  
+
+    position:absolute;
+    bottom:0;
+    color: #efefef;
+    background:rgba(0, 0, 0, 0.4);
+    width: 100%;
+    padding:0.2rem;
+
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   FOOTER                                   */
+/* -------------------------------------------------------------------------- */
+
+footer {
+    text-align: center;
+    background:#322828;
+    color:#efefef;
+    padding:2rem 0;
+    margin-top: 3rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                  MEDIA QUERY PER SCHERMI SUPERIORI A 992px                 */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width:992px) {
+
+    .wMargin {
+        width: 70%;
+        /*posso anche omettere margin:0 auto perché lo eredita dalla regola precedente */
+    }
+    
+    .newsBox {
+        width: 33%;
+        padding:0.5rem;
+    }
+
+    #servizi {
+        display: flex;
+        flex-wrap: wrap; /*vai a capo quando esaurisci lo spazio! */
+        
+    }
+
+    .serviziBox {
+        width: 50%;
+        display: flex; /*fai affiancare i tuoi figli: serviziIcon e serviziText*/
+        align-items: center; /*allinea i figli in verticale al centro*/
+
+    }
+
+    .serviziText {
+        text-align: left; /*Sovrascrivo la regola precedente che era text-align: center.*/
+        padding-left: 2rem; /*da 992px in su il testo è affiancato all'icona quindi mi serve un padding a sinistra*/
+    }
+
+    .galleryItem {
+        width: 25%;
+
+    }
+
+    
+    .galleryItem .caption {
+        height:2rem; /*forzo un'altezza perché altrimenti la transizione su HEIGHT non funziona*/
+        transition: all 0.5s ease-in-out;
+        display: flex; /*per centrare gli elementi*/
+        align-items: center;
+        justify-content: center;
+    }
+    .galleryItem:hover .caption{ /* seleziono l'elemento .caption dentro a .galleryItem al passaggio del mouse */
+    height: 100%;
+    /*animo su HOVER solo da desktop perché da mobile lo status 'hover' non esiste*/
+    }
+
+   
+    
+}

@@ -1,0 +1,11 @@
+{
+  "name": "songs",
+  "version": "1.0.0",
+  "description": "applicazione songs backend/frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "raffaele del prete",
+  "license": "ISC"
+}

@@ -11,7 +11,7 @@ PREREQUISITI: la app deve essere responsive e single page
 7. TODO implementare la Edit Song (anche se solo simulata con fake response)
 8. DONE implementare la Delete Song (anche se solo simulata con fake response)
 */
-const base_url = "./stubs/";
+const base_url = "/";
 
 let template_riga_song = "";
 let songModal = null;
@@ -48,7 +48,7 @@ function deleteSong(event){
 	console.log("delete id="+song_id);
 
 	if(confirm("Sei sicuro di voler cancellare la canzone: "+song_id+" - "+song_title+"?")){
-		fetch(base_url+"delete.json?id="+song_id)
+		fetch(base_url+"delete?id="+song_id)
 		.then(function(response) {
 			return response.json();
 		})
@@ -75,7 +75,7 @@ function refreshSongs(event){
 
 	// rileggo la lista delle canzoni dal back-end e ridisegno la tabella
 
-	fetch(base_url+"list.json")
+	fetch(base_url+"list")
 	.then(function(response) {
 		return response.json();
 	})
@@ -127,7 +127,7 @@ function saveSong(event){
 
 	if(song_id == ""){
 		// caso create
-		fetch(base_url+"create.json?title="+encodeURIComponent(song_title)
+		fetch(base_url+"create?title="+encodeURIComponent(song_title)
 			+"&author="+encodeURIComponent(song_author)
 			+"&composer="+encodeURIComponent(song_composer))
 		.then(function(response) {
@@ -152,7 +152,7 @@ function saveSong(event){
 		});
 	} else {
 		// caso edit
-		fetch(base_url+"create.json?id="+song_id
+		fetch(base_url+"edit?id="+song_id
 		+"&title="+encodeURIComponent(song_title)
 		+"&author="+encodeURIComponent(song_author)
 		+"&composer="+encodeURIComponent(song_composer))
