@@ -1,0 +1,17 @@
+[
+		{
+			"user":"carlo",
+			"password":"12345",
+            "token":"asfjkasifujasoijfioa"
+		},
+		{
+			"user":"luca",
+			"password":"12345",
+            "token":"asopfkjaspokfao"
+		},
+		{
+			"user":"mattia",
+			"password":"12345",
+            "token":"aopfkjaspojf"
+		}
+]
